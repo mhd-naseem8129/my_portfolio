@@ -1,0 +1,253 @@
+/* Root and Reset */
+:root {
+  --primary: #6C63FF;
+  --accent: #FF6584;
+  --light: #F9F9FF;
+  --text: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Links & Buttons */
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+  animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--accent);
+  width: 0;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #6C63FF, #A68DFF);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero span {
+  color: #FFD700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections */
+.section {
+  padding: 60px 0;
+}
+
+.section h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* About */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-content img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  animation: bounceIn 1.5s;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.about-content p {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Skills & Services Grid */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.skill-grid div {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.skill-grid div:hover {
+  transform: translateY(-5px);
+  color: var(--accent);
+}
+
+/* Projects */
+.project-cards {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h4 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Contact */
+.contact p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.socials {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.socials a {
+  font-size: 1.4rem;
+  margin: 0 0.7rem;
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f1f1f1;
+  font-size: 0.9rem;
+}
